@@ -48,12 +48,27 @@ The following contributions were made by each team member:
 \begin{itemize}
     \item Dataset name and source: Solar Power Generation Data by Ani Kannal from Kaggle
     \item Time period and sampling frequency: data has been collected over a period of 34 days with a sampling frequency of 15 minutes
-    \item Key variables analyzed:
+    \item Key variables analyzed: DC\_Power, AC\_Power, Ambient Temperature, Module Temperature, Irradiation
     \item Basic statistical properties:
     \begin{itemize}
-        \item Number of observations:
-        \item Missing values:
-        \item Key statistics:
+        \item Number of observations: 3134
+        \item Missing values: 130 (should be 34 days * 24 hours * 4 observations per hour = 3264)
+        \item Key statistics of cleaned dataset: 
+            \begin{table}[h!]
+            \centering
+            \begin{tabular}{lccccc}
+            \toprule
+            Variable & Mean & Median & Min & Max & Std \\
+            \midrule
+            DC\_Power in MW & 67.540 & 8.632 & 0.000 & 269.097 & 85.798 \\
+            AC\_Power in MW & 66.060 & 8.344 & 0.000 & 262.392 & 83.858 \\
+            Ambient Temperature in $^\circ$C & 25.5 & 24.7 & 21.1 & 33.8 & 3.3 \\
+            Module Temperature in $^\circ$C & 31.1 & 24.8 & 19.2 & 60.3 & 12.1 \\
+            Irradiation kW/m$^2$ & 0.2273 & 0.0289 & 0.0000 & 0.999 & 0.2950 \\
+            \bottomrule
+            \end{tabular}
+            \label{tab:basic_stats}
+            \end{table}
     \end{itemize}
 \end{itemize}
 
@@ -61,15 +76,15 @@ The following contributions were made by each team member:
 
 \subsection{Data Preprocessing}
 \begin{itemize}
-    \item Cleaning procedures:
-    \item Outlier handling:
-    \item Missing value treatment:
-    \item Data transformations:
+    \item Cleaning procedures: Fix AC\_Power wrong factor to get correct kW values, synchronize Datetime format 
+    \item Outlier handling: Replace outliers with missing values, but remove rows with 6 consecutive outliers, to decrease time frame of interpolation
+    \item Missing value treatment: Interpolate them with plausible values
+    \item Data transformations: Split original dataframe to seperate inverters to different columns
 \end{itemize}
 
 \subsection{Exploratory Data Analysis}
 \begin{itemize}
-    \item Distribution analysis:
+    \item Distribution analysis: For total power we can observe a lean towards lower values, possible due to night time. This represents an inverse gaussian distribution. This of course correlates with the IR-Radiation distribution. The ambient temperature shows multi-modal tendencies, with clear bumps around 23 and 28 degrees. For the module temperatures this is less pronounced, with the bumps at 22 and 45 degrees.
     \item Time series patterns:
     \item Correlation analysis:
     \item Key visualizations:
