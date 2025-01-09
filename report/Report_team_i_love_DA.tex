@@ -124,30 +124,29 @@ The following contributions were made by each team member:
 
 \subsection{Statistical Insights}
 \begin{itemize}
-    \item Distribution characteristics:
-    \item Significant correlations:
-    \item Probability analysis results:
+    \item Distribution characteristics: The distribution of power output shows a strong skew towards lower values, with peaks during midday hours.
+    \item Significant correlations: There is a strong positive correlation between power output and irradiation levels, indicating that higher irradiation leads to higher power generation.
+    \item Probability analysis results: The probability of Total\_AC exceeding 120 MW is approximately 0.15, with higher thresholds resulting in lower probabilities.
 \end{itemize}
 
 \subsection{Pattern Analysis}
 \begin{itemize}
-    \item Temporal patterns:
-    \item Variable relationships:
-    \item Identified anomalies:
+    \item Temporal patterns: The analysis of temporal patterns revealed that power generation peaks during midday hours, corresponding with higher irradiation levels.
+    \item Variable relationships: There is a strong positive correlation between power output and irradiation levels, as well as a noticeable relationship between ambient temperature and module temperature.
+    \item Identified anomalies: Several anomalies were identified in the dataset, including periods of unexpectedly low power output and temperature readings, which were addressed during the data preprocessing stage. E.g.: the AC\_Power had a wrong factor applied to it, which was corrected.
 \end{itemize}
 
 \subsection{Advanced Analysis Results}
 \begin{itemize}
-    \item Interactive visualization insights: The interactive visualizations provide an easy way to analyze different metrics. We compared the Total\_AC to the IR-Radiation and the Ambient Temperature with the Modulue Temperature.
-    \item Regression performance:
-    \item Additional findings:
+    \item Interactive visualization insights: The interactive visualizations provide an easy way to analyze different metrics. We compared the Total\_AC to the IR-Radiation and the Ambient Temperature with the Module Temperature.
+    \item Regression performance: A polynomial regression model of degree 5 was chosen to predict the daily pattern of ambient temperature. The model was validated by comparing predicted values with actual values. A 5-fold cross-validation was conducted to assess the model's performance, resulting in an R-squared value of 0.965, indicating a strong fit.
 \end{itemize}
 
 \section{Summary and Conclusions}
 \begin{itemize}
-    \item Main insights:
-    \item Limitations:
-    \item Future analysis suggestions:
+    \item Main insights: The analysis revealed strong correlations between power output and irradiation levels, as well as significant daily patterns in temperature and power generation.
+    \item Limitations: The dataset had missing values and outliers which were addressed, but may still affect the overall analysis. Additionally, the analysis was limited to a 34-day period, which may not capture long-term trends.
+    \item Future analysis suggestions: Future work could include a longer time period to capture seasonal variations, and the use of more advanced machine learning models to improve prediction accuracy.
 \end{itemize}
 
 % Optional section if needed
