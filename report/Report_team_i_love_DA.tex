@@ -48,7 +48,7 @@ The following contributions were made by each team member:
 \begin{itemize}
     \item Dataset name and source: Solar Power Generation Data by Ani Kannal from Kaggle
     \item Time period and sampling frequency: data has been collected over a period of 34 days with a sampling frequency of 15 minutes
-    \item Key variables analyzed: DC\_Power, AC\_Power, Ambient Temperature, Module Temperature, Irradiation
+    \item Key variables analyzed: DC\_Power, AC\_Power, Ambient Temperature, Module Temperature, IR-radiation
     \item Basic statistical properties:
     \begin{itemize}
         \item Number of observations: 3134
@@ -64,7 +64,7 @@ The following contributions were made by each team member:
             AC\_Power in MW & 66.060 & 8.344 & 0.000 & 262.392 & 83.858 \\
             Ambient Temperature in $^\circ$C & 25.5 & 24.7 & 21.1 & 33.8 & 3.3 \\
             Module Temperature in $^\circ$C & 31.1 & 24.8 & 19.2 & 60.3 & 12.1 \\
-            Irradiation kW/m$^2$ & 0.2273 & 0.0289 & 0.0000 & 0.999 & 0.2950 \\
+            IR-radiation kW/m$^2$ & 0.2273 & 0.0289 & 0.0000 & 0.999 & 0.2950 \\
             \bottomrule
             \end{tabular}
             \label{tab:basic_stats}
@@ -76,10 +76,10 @@ The following contributions were made by each team member:
 
 \subsection{Data Preprocessing}
 \begin{itemize}
-    \item Cleaning procedures: Fix AC\_Power wrong factor to get correct kW values, synchronize Datetime format 
-    \item Outlier handling: Replace outliers with missing values, but remove rows with 6 consecutive outliers, to decrease time frame of interpolation
-    \item Missing value treatment: Interpolate them with plausible values
-    \item Data transformations: Split original dataframe to seperate inverters to different columns
+    \item Cleaning procedures: Fixed the AC\_Power wrong factor to get correct kW values and synchronized the Datetime format.
+    \item Outlier handling: Replaced outliers with missing values, but removed rows with 6 consecutive outliers to decrease the time frame of interpolation.
+    \item Missing value treatment: Interpolated missing values with plausible values.
+    \item Data transformations: Split the original dataframe to separate inverters into different columns.
 \end{itemize}
 
 \subsection{Exploratory Data Analysis}
@@ -98,11 +98,11 @@ The following contributions were made by each team member:
     \begin{itemize}
         \item This value changes: the higher the threshold, the lower the probability.
     \end{itemize}
-    \item The cross tabulation analysis shows the distribution of Total\_AC exceeding the threshold across different levels of Irradiation.
+    \item The cross tabulation analysis shows the distribution of Total\_AC exceeding the threshold across different levels of IR-radiation.
     \begin{itemize}
-        \item Depending on the set threshold level, the distribution changes. When set to a higher Total\_AC, the more likely it is with a higher irradiation level to be over the threshold.
+        \item Depending on the set threshold level, the distribution changes. When set to a higher Total\_AC, the more likely it is with a higher IR-radiation level to be over the threshold.
     \end{itemize}
-    \item The conditional probability analysis reveals the likelihood of Total\_AC exceeding the threshold given different Irradiation levels.
+    \item The conditional probability analysis reveals the likelihood of Total\_AC exceeding the threshold given different IR-radiation levels.
     \begin{itemize}
         \item For this analysis, only the probabilities around the threshold have a probability not to be 1 or 0. Higher levels have a probability of 1, and lower levels have a probability of 0.
     \end{itemize}
@@ -125,14 +125,14 @@ The following contributions were made by each team member:
 \subsection{Statistical Insights}
 \begin{itemize}
     \item Distribution characteristics: The distribution of power output shows a strong skew towards lower values, with peaks during midday hours.
-    \item Significant correlations: There is a strong positive correlation between power output and irradiation levels, indicating that higher irradiation leads to higher power generation.
+    \item Significant correlations: There is a strong positive correlation between power output and IR-radiation levels, indicating that higher IR-radiation leads to higher power generation.
     \item Probability analysis results: The probability of Total\_AC exceeding 120 MW is approximately 0.15, with higher thresholds resulting in lower probabilities.
 \end{itemize}
 
 \subsection{Pattern Analysis}
 \begin{itemize}
-    \item Temporal patterns: The analysis of temporal patterns revealed that power generation peaks during midday hours, corresponding with higher irradiation levels.
-    \item Variable relationships: There is a strong positive correlation between power output and irradiation levels, as well as a noticeable relationship between ambient temperature and module temperature.
+    \item Temporal patterns: The analysis of temporal patterns revealed that power generation peaks during midday hours, corresponding with higher IR-radiation levels.
+    \item Variable relationships: There is a strong positive correlation between power output and IR-radiation levels, as well as a noticeable relationship between ambient temperature and module temperature.
     \item Identified anomalies: Several anomalies were identified in the dataset, including periods of unexpectedly low power output and temperature readings, which were addressed during the data preprocessing stage. E.g.: the AC\_Power had a wrong factor applied to it, which was corrected.
 \end{itemize}
 
@@ -144,7 +144,7 @@ The following contributions were made by each team member:
 
 \section{Summary and Conclusions}
 \begin{itemize}
-    \item Main insights: The analysis revealed strong correlations between power output and irradiation levels, as well as significant daily patterns in temperature and power generation.
+    \item Main insights: The analysis revealed strong correlations between power output and IR-radiation levels, as well as significant daily patterns in temperature and power generation.
     \item Limitations: The dataset had missing values and outliers which were addressed, but may still affect the overall analysis. Additionally, the analysis was limited to a 34-day period, which may not capture long-term trends.
     \item Future analysis suggestions: Future work could include a longer time period to capture seasonal variations, and the use of more advanced machine learning models to improve prediction accuracy.
 \end{itemize}
