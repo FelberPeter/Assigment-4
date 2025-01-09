@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \usepackage{graphicx}
@@ -7,7 +7,7 @@
 \usepackage{bookmark}
 \usepackage{amsmath}
 
-\geometry{a4paper, margin=1in}
+\geometry{a4paper, margin=0.95in}
 
 \title{Data Analysis Project Report}
 \author{
@@ -92,9 +92,23 @@ The following contributions were made by each team member:
 
 \subsection{Statistical Analysis}
 \begin{itemize}
-    \item Probability analysis:
-    \item Law of Large Numbers demonstration:
-    \item Central Limit Theorem application:
+    \item Probability analysis: 
+    \begin{itemize}
+        \item The probability of Total\_AC exceeding the threshold valu of 120 MW is approximately 0.15.
+    \begin{itemize}
+        \item This value changes: the higher the threshold, the lower the probability.
+    \end{itemize}
+    \item The cross tabulation analysis shows the distribution of Total\_AC exceeding the threshold across different levels of Irradiation.
+    \begin{itemize}
+        \item Depending on the set threshold level, the distribution changes. When set to a higher Total\_AC, the more likely it is with a higher irradiation level to be over the threshold.
+    \end{itemize}
+    \item The conditional probability analysis reveals the likelihood of Total\_AC exceeding the threshold given different Irradiation levels.
+    \begin{itemize}
+        \item For this analysis, only the probabilities around the threshold have a probability not to be 1 or 0. Higher levels have a probability of 1, and lower levels have a probability of 0.
+    \end{itemize}
+\end{itemize}
+    \item Law of Large Numbers demonstration: The Law of Large Numbers states that as the number of trials increases, the sample mean will tend to be closer to the population mean. In this case, the Law of Large Numbers is demonstrated by calculating the sample mean of Total\_AC exceeding the threshold value of 90,000 for different sample sizes. As the sample size increases, the sample mean tends to be closer to the population mean, which is the probability of Total\_AC exceeding the threshold value of 90,000.
+    \item Central Limit Theorem application: The Central Limit Theorem states that the sampling distribution of the sample mean will be approximately normally distributed, regardless of the population distribution, as the sample size increases. In this case, the Central Limit Theorem is applied by calculating the sample mean of Total\_AC exceeding the threshold value of 90,000 for different sample sizes and plotting the sampling distribution. As the sample size increases, the sampling distribution tends to be closer to a normal distribution.
     \begin{itemize}
         \item Q-Q plot analysis (if applicable):
     \end{itemize}
