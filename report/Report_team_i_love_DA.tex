@@ -85,9 +85,9 @@ The following contributions were made by each team member:
 \subsection{Exploratory Data Analysis}
 \begin{itemize}
     \item Distribution analysis: For total power we can observe a lean towards lower values, possible due to night time. This represents an inverse gaussian distribution. This of course correlates with the IR-Radiation distribution. The ambient temperature shows multi-modal tendencies, with clear bumps around 23 and 28 degrees. For the module temperatures this is less pronounced, with the bumps at 22 and 45 degrees.
-    \item Time series patterns:
-    \item Correlation analysis:
-    \item Key visualizations:
+    \item Time series patterns: From the daily pattern plots we can clearly observe the relation between time of day and IR-Radiation and the Power gain coming with this. With peaks during times of 12:00 to 15:00 o'clock. When it comes to time series analysis over multiple days we can tell which days were sunny and which days were cloudy, based on the power gain and temperatures respectively.
+    \item Correlation analysis: Looking at the correlation matrix we can observe strong correlations between the different power outputs and the IR-Radiation. This is of course because the photovoltaic panels produce more energy in direct sunlight.
+    %\item Key visualizations:
 \end{itemize}
 
 \subsection{Statistical Analysis}
@@ -110,13 +110,13 @@ The following contributions were made by each team member:
     \item Law of Large Numbers demonstration: The Law of Large Numbers states that as the number of trials increases, the sample mean will tend to be closer to the population mean. In this case, the Law of Large Numbers is demonstrated by calculating the sample mean of Total\_AC exceeding the threshold value of 90,000 for different sample sizes. As the sample size increases, the sample mean tends to be closer to the population mean, which is the probability of Total\_AC exceeding the threshold value of 90,000.
     \item Central Limit Theorem application: The Central Limit Theorem states that the sampling distribution of the sample mean will be approximately normally distributed, regardless of the population distribution, as the sample size increases. In this case, the Central Limit Theorem is applied by calculating the sample mean of Total\_AC exceeding the threshold value of 90,000 for different sample sizes and plotting the sampling distribution. As the sample size increases, the sampling distribution tends to be closer to a normal distribution.
     \begin{itemize}
-        \item Q-Q plot analysis (if applicable):
+        \item Q-Q plot analysis: Data from the total yield does not follow a normal disribution as shown in the Q-Q plot. While in the middle section the data is somewhat normally distributed the tails show a clear deviation from the normal distribution.
     \end{itemize}
     \item Regression analysis:
     \begin{itemize}
-        \item Model selection:
-        \item Model fitting and validation:
-        \item Cross-validation (if applicable):
+        \item Model selection: We selected a polynomial regression model of degree 5 to predict the daily pattern the ambient temperature follows.
+        \item Model fitting and validation: We validated the model by comparing the predicted values to the actual values.
+        \item Cross-validation: We performed a 5-fold cross-validation to evaluate the model's performance. The model achieved an R-squared value of 0.965, indicating a good fit.
     \end{itemize}
 \end{itemize}
 
@@ -138,7 +138,7 @@ The following contributions were made by each team member:
 
 \subsection{Advanced Analysis Results}
 \begin{itemize}
-    \item Interactive visualization insights:
+    \item Interactive visualization insights: The interactive visualizations provide an easy way to analyze different metrics. We compared the Total\_AC to the IR-Radiation and the Ambient Temperature with the Modulue Temperature.
     \item Regression performance:
     \item Additional findings:
 \end{itemize}
